@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'livereload',
     'django.contrib.staticfiles',
+    'accounts',
     'posts',
 ]
+AUTH_USER_MODEL = "accounts.CustomUser"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,8 +84,8 @@ WSGI_APPLICATION = 'DocBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'kana',
-        'USER': 'kana',
+        'NAME': 'postgres',
+        'USER': 'postgres',
         'PASSWORD': 'kana',
         'HOST': 'localhost',
         'PORT': '5432'
@@ -133,3 +135,4 @@ STATIC_ROOT =BASE_DIR / 'staticfiles'
 #POUR IMAGE
 MEDIA_URL ='/media/'
 MEDIA_ROOT =BASE_DIR / 'mediafiles'
+LOGIN_REDIRECT_URL = 'home'

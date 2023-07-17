@@ -29,7 +29,7 @@ class BlogPost(models.Model):
     @property
     def  author_or_default(self):
         if self.author:
-            return self.author.username
+            return self.author.email
         return "l'auteur inconnue"
     #pour la redirection
     def get_absolute_url(self):
